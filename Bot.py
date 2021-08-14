@@ -1,3 +1,4 @@
+
 from bs4 import BeautifulSoup
 import requests
 import discord
@@ -12,10 +13,11 @@ from discord_components import DiscordComponents, Button, ButtonStyle, Interacti
 intents = discord.Intents.default()
 intents.members = True
 
-client = commands.Bot(command_prefix="=", intents=intents)
+client = commands.Bot(command_prefix=":", intents=intents)
 client.remove_command('help')
 
-token = "NzMwNDk5NzIxMzYxMDk2ODA1.XwYY4Q.s-3ENo_pfF5r3tnkuTOXCojJlpI"
+# token = "NzMwNDk5NzIxMzYxMDk2ODA1.XwYY4Q.s-3ENo_pfF5r3tnkuTOXCojJlpI"
+token = 'NzM1MjU3Mzc3NjA3MjU0MTE3.Xxdnyw.yCKnVzcCHxY_vS5GMelz2ElqSXs'
 
 global useractive
 global succvariable
@@ -96,7 +98,7 @@ def Timecheck():
 async def on_ready():
     print("Ready to kick names and take ass")
     DiscordComponents(client)
-    await client.change_presence(status=discord.Status.do_not_disturb, activity=discord.Game("Use =help"))
+    await client.change_presence(status=discord.Status.do_not_disturb)
     checktime.start()
     resetuser.start()
 
@@ -117,8 +119,8 @@ async def resetuser():
 @client.event
 async def on_message(message):
     listOfGlobals = globals()
-    if message.channel.id == 848461667230154762:
-        if message.author.id == 751168764011216928:
+    if message.channel.id == 868740265861591100:
+        if message.author.id == 108791675752579072:
             await asyncio.sleep(6)
             embeds = message.embeds
             for embed in embeds:
@@ -200,8 +202,8 @@ async def help_vault(ctx):
 @commands.cooldown(1, 15, BucketType.user)
 async def safekeep_cash(ctx, Amount):
     Timecheck()
-    email = "@gmail.com"
-    password = "1233"
+    email = "bswindellnwt08@gmail.com"
+    password = "justiceman57"
     global postcashtrade,res
     user = ctx.author.display_name
     a, b = user.split("/")
@@ -212,7 +214,9 @@ async def safekeep_cash(ctx, Amount):
         "Please remember that, to successfully withdraw from your account, you will have to register yourself with <@!751168764011216928>. You can check your registration status by pinging yourself with ?whois @ping, and if you're not registered, run ?register <nationidhere> without the < and >.")
     fetchedData = requests.get(f"https://politicsandwar.com/api/alliance-members/?allianceid=5049&key=a00d3f1cd6f1ad")
     fetchedData = fetchedData.json()
-    krampusmoney = fetchedData['nations'][6]['money']
+    for nation in fetchedData['nations']:
+        if nation['nationid'] == 92845:
+            krampusmoney = nation['money']
     print(krampusmoney)
     if useractive == 1:
         await ctx.send(
@@ -259,8 +263,8 @@ async def safekeep_cash(ctx, Amount):
 
                     if float(krampusmoney2) == float(postcashtrade):
                         print(float(krampusmoney2) + float(Amount))
-                        email = "@gmail.com"
-                        password = "123"
+                        email = "bswindellnwt08@gmail.com"
+                        password = "justiceman57"
 
                         embed = discord.Embed(title="Step 2 of Offshoring",
                                               description="This is the second step of the two-step process.",
@@ -335,8 +339,8 @@ async def safekeep_rss(ctx, Amount, resource):
     Timecheck()
     resorces = ['food', 'coal', 'oil', 'uranium', 'bauxite', 'iron', 'lead', 'gasoline', 'munitions', 'aluminum',
                 'steel']
-    email = "@gmail.com"
-    password = "124"
+    email = "bswindellnwt08@gmail.com"
+    password = "justiceman57"
 
     user = ctx.author.display_name
     a, b = user.split("/")
@@ -408,8 +412,8 @@ async def safekeep_rss(ctx, Amount, resource):
             krampusmoney2 = fetchedData['nations'][6][resource]
             if float(krampusmoney2) == float(posttrade):
                 print(float(krampusmoney2) + float(Amount))
-                email = "@gmail.com"
-                password = "123"
+                email = "bswindellnwt08@gmail.com"
+                password = "justiceman57"
 
                 embed = discord.Embed(title="Step 2 of updating your balance!",
                                       description="This is the second step of the two-step process.",
@@ -486,8 +490,8 @@ async def resourceverify(ctx, Amount, resource):
     else:
         if float(krampusmoney2) == float(posttrade):
             print(float(krampusmoney2) + float(Amount))
-            email = "billehgmail.com"
-            password = "1234"
+            email = "bswindellnwt08@gmail.com"
+            password = "justiceman57"
 
             user = ctx.author.display_name
             a, b = user.split("/")
@@ -552,8 +556,8 @@ async def cashverify(ctx, Amount):
 
     if float(krampusmoney2) == float(postcashtrade):
         print(float(krampusmoney2) + float(Amount))
-        email = "billy@carth.com"
-        password = "123billyboi*"
+        email = "bswindellnwt08@gmail.com"
+        password = "justiceman57"
 
         embed = discord.Embed(title="Step 2 of Offshoring",
                               description="This is the second step of the two-step process.",
@@ -609,8 +613,8 @@ async def cashverify(ctx, Amount):
 async def payment(ctx, Amount):
     Timecheck()
 
-    email = "billy@carth.com"
-    password = "123billyboi*"
+    email = "bswindellnwt08@gmail.com"
+    password = "justiceman57"
     user = ctx.author.display_name
 
     a, b = user.split("/")
@@ -703,8 +707,8 @@ async def paymentverify(ctx, Amount):
         if float(krapmsmoney333) == float(newmoney):
             print(float(krapmsmoney333) + float(Amount))
 
-            email = "billy@carth.com"
-            password = "123billyboi*"
+            email = "bswindellnwt08@gmail.com"
+            password = "justiceman57"
 
             user = ctx.author.display_name
             a, b = user.split("/")
