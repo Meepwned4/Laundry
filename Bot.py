@@ -152,7 +152,7 @@ async def help(ctx):
                     value="Due to nature of trades within Politics & War, it was necessary for us to make two different systems to automate Cash-Ins, as well as Resource-Ins (Alex Approved Trades:tm:). Therefore, we had to first make a help command to introduce the users to these, with a how-to guidebook, which is what you are reading now.",
                     inline=False)
     embed.add_field(name="How do I get started?",
-                    value="To get started, simply run either the =help_payment **or** =help_vault commands",
+                    value="To get started, simply run either the :help_payment **or** :help_vault commands",
                     inline=False)
     embed.set_footer(text=f"Courtesy of The Foundation \nCurrent Time: {current_time} UTC")
     await ctx.send(embed=embed)
@@ -166,13 +166,13 @@ async def help_payment(ctx):
                           color=colors.greyple)
     embed.set_author(name="Help Desk")
     embed.add_field(name="Step 1",
-                    value="First, you'll need to run the command `=payment <amount>` *Example: =payment 4000000*\nThis command will send you a trade to buy 1 food in exchange for the amount you want to add to your account. \n**Important**: The limit is 50 million, and round numbers only.",
+                    value="First, you'll need to run the command `:payment <amount>` *Example: :payment 4000000*\nThis command will send you a trade to buy 1 food in exchange for the amount you want to add to your account. \n**Important**: The limit is 50 million, and round numbers only.",
                     inline=False)
     embed.add_field(name="Step 2",
-                    value="Now, you'll need to run `=paymentverify <amount>` *Example: =paymentverify 4000000*. With this command, your latest transaction will be verified, and your profile balance will be appropriately updated by a team member. You can also use 'payver' as an alias, i.e: *=payver 4000000*",
+                    value="Now, you'll need to run `:paymentverify <amount>` *Example: :paymentverify 4000000*. With this command, your latest transaction will be verified, and your profile balance will be appropriately updated by a team member. You can also use 'payver' as an alias, i.e: *:payver 4000000*",
                     inline=False)
     embed.add_field(name="Step 3",
-                    value="**Important**: If you don't accept the trade within 30 seconds, the bot will not be able to verify it, as the API will be flooded with other food trades. Therefore, you have 45 seconds to accept the trade and run =cashverify <amount>",
+                    value="**Important**: If you don't accept the trade within 30 seconds, the bot will not be able to verify it, as the API will be flooded with other food trades. Therefore, you have 45 seconds to accept the trade and run :cashverify <amount>",
                     inline=False)
     embed.set_footer(text=f"Courtesy of The Foundation \nCurrent Time: {current_time} UTC")
     await ctx.send(embed=embed)
@@ -185,13 +185,13 @@ async def help_vault(ctx):
                           description="In two short steps, you can update your account.", color=colors.greyple)
     embed.set_author(name="Help Desk")
     embed.add_field(name="How do I add cash to my bank account?",
-                    value="First, you'll need to run the command `=safekeep_cash <amount>` *Example: =safekeep_cash 4000000*. After accepting the trade in game, run `=cashverify <amount>` *Example: =cashverify 4000000*. The limit __per transaction__ is 50 million (50000000) but bank accounts don't have an upper limit. **Note**: If you don't accept the trade within 30 seconds, the bot will not be able to verify it, as the API will be flooded with other food trades. Therefore, you have 30 seconds to accept the trade and verify it",
+                    value="First, you'll need to run the command `:safekeep_cash <amount>` *Example: :safekeep_cash 4000000*. After accepting the trade in game, run `:cashverify <amount>` *Example: :cashverify 4000000*. The limit __per transaction__ is 50 million (50000000) but bank accounts don't have an upper limit. **Note**: If you don't accept the trade within 30 seconds, the bot will not be able to verify it, as the API will be flooded with other food trades. Therefore, you have 30 seconds to accept the trade and verify it",
                     inline=False)
     embed.add_field(name="How do I add resources to my bank account?",
-                    value="In order to do that, you'll need to run the command `=safekeep_rss <amount> <resource>` *Example: =safekeep_rss 40000 steel*. After accepting the trade in game, run `=resourceverify <amount> <resource>` *Example: =resourceverify 40000 steel*. The limit __per transaction__ is 1 million. Keep in mind you can only do one type of a resource at a time with this command.",
+                    value="In order to do that, you'll need to run the command `:safekeep_rss <amount> <resource>` *Example: :safekeep_rss 40000 steel*. After accepting the trade in game, run `:resourceverify <amount> <resource>` *Example: :resourceverify 40000 steel*. The limit __per transaction__ is 1 million. Keep in mind you can only do one type of a resource at a time with this command.",
                     inline=False)
     embed.add_field(name="How do I withdraw from my bank account?",
-                    value="To withdraw, you'll need to simply run `=withdraw_cash <amount>` **or** `=withdraw_rss <amount> <resource>`, without the < and >, like the other commands",
+                    value="To withdraw, you'll need to simply run `:withdraw_cash <amount>` **or** `:withdraw_rss <amount> <resource>`, without the < and >, like the other commands",
                     inline=False)
     embed.set_footer(text=f"Courtesy of The Foundation \nCurrent Time: {current_time} UTC")
     await ctx.send(embed=embed)
@@ -233,7 +233,7 @@ async def safekeep_cash(ctx, Amount):
                                   color=colors.darker_grey)
             embed.set_author(name="Help Desk")
             embed.add_field(name="Trade sent!",
-                            value=f"""A trade offer has been sent to your nation for ${Amount}. Now, you need to log on to the game, open your trades (found under this link: https://politicsandwar.com/nation/trade/), and accept the trade. After accepting the trade, you can then type in the following command: `=cashverify {Amount}`, which will verify the transaction, offshore it, and then appropriately update your bank account.""",
+                            value=f"""A trade offer has been sent to your nation for ${Amount}. Now, you need to log on to the game, open your trades (found under this link: https://politicsandwar.com/nation/trade/), and accept the trade. After accepting the trade, you can then type in the following command: `:cashverify {Amount}`, which will verify the transaction, offshore it, and then appropriately update your bank account.""",
                             inline=False)
             embed.add_field(name="Timer",
                             value=f"""Due to API constraints, you have a 30 second timer in which you must complete this transaction, otherwise the trade won't be verified. Current time remaining: `29 seconds`.""",
@@ -390,7 +390,7 @@ async def safekeep_rss(ctx, Amount, resource):
                               color=colors.darker_grey)
         embed.set_author(name="Help Desk")
         embed.add_field(name="Trade sent!",
-                        value=f"""A trade offer has been sent to your nation for {Amount} of {resource}. Now, you need to log on to the game, open your trades (found under this link: https://politicsandwar.com/nation/trade/), and accept the trade. After accepting the trade, you can then type in the following command: `=rssverify {Amount} {resource}`, which will verify the transaction, offshore it, and then appropriately update your profile.""",
+                        value=f"""A trade offer has been sent to your nation for {Amount} of {resource}. Now, you need to log on to the game, open your trades (found under this link: https://politicsandwar.com/nation/trade/), and accept the trade. After accepting the trade, you can then type in the following command: `:rssverify {Amount} {resource}`, which will verify the transaction, offshore it, and then appropriately update your profile.""",
                         inline=False)
         embed.add_field(name="Timer",
                         value=f"""Due to API constraints, you have a 30 second timer in which you must complete this transaction, otherwise the trade won't be verified. Current time remaining: `29 seconds`.""",
@@ -660,7 +660,7 @@ async def payment(ctx, Amount):
                                       color=colors.dark_red)
                 embed.set_author(name="Help Desk")
                 embed.add_field(name="Trade sent!",
-                                value=f"""A trade offer has been sent to your nation for ${Amount}. Now, you need to log on to the game, open your trades (found under this link: https://politicsandwar.com/nation/trade/), and accept the trade. After accepting the trade, you can then type in the following command: `=payver {Amount}`, which will verify the transaction, offshore it, and then appropriately update your profile.""",
+                                value=f"""A trade offer has been sent to your nation for ${Amount}. Now, you need to log on to the game, open your trades (found under this link: https://politicsandwar.com/nation/trade/), and accept the trade. After accepting the trade, you can then type in the following command: `:payver {Amount}`, which will verify the transaction, offshore it, and then appropriately update your profile.""",
                                 inline=False)
                 embed.add_field(name="Timer",
                                 value=f"""Due to API constraints, you have a 1 minute timer in which you must complete this transaction, otherwise you'll lose your place in the queue, and the trade won't be refunded. Current time remaining: `59 seconds`.""",
@@ -866,5 +866,5 @@ async def on_command_error(ctx, exc):
         await ctx.send("You do not have the necessary permissions to use this command")
 
 
-client.load_extension('cogs.CommandEvents')
+# client.load_extension('cogs.CommandEvents')
 client.run(token)
