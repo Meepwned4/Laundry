@@ -98,8 +98,8 @@ def Timecheck():
 async def on_ready():
     print("Ready to kick names and take ass")
     DiscordComponents(client)
-    await client.change_presence(status=discord.Status.idle)
-    # await client.change_presence(activity=discord.Game(
+    # await client.change_presence(status=discord.Status.do_not_disturb)
+    await client.change_presence(activity=discord.Game(
         "Hauling mad cash"))
     checktime.start()
     resetuser.start()
@@ -137,8 +137,6 @@ async def on_message(message):
             print(succvariable)
         else:
             print("Wrong Author")
-    else:
-        print("Wrong Chan")
     await client.process_commands(message)
 
 @client.command()
