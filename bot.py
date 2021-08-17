@@ -138,7 +138,7 @@ async def on_message(message):
         else:
             print("Wrong Author")
     else:
-    print("Wrong Chan")
+        print("Wrong Chan")
     await client.process_commands(message)
 
 @client.command()
