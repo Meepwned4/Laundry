@@ -122,7 +122,7 @@ async def resetuser():
 async def on_message(message):
     listOfGlobals = globals()
     if message.channel.id == 868740265861591100:
-        if message.author.id == 108791675752579072:
+        if message.author.id == 751168764011216928:
             await asyncio.sleep(6)
             embeds = message.embeds
             for embed in embeds:
