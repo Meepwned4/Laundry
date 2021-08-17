@@ -121,7 +121,7 @@ async def resetuser():
 @client.event
 async def on_message(message):
     listOfGlobals = globals()
-    if message.channel.id == 868740265861591100:
+    if message.channel.id == 848461667230154762:
         if message.author.id == 751168764011216928:
             await asyncio.sleep(6)
             embeds = message.embeds
@@ -137,6 +137,8 @@ async def on_message(message):
             print(succvariable)
         else:
             print("Wrong Author")
+    else:
+    print("Wrong Chan")
     await client.process_commands(message)
 
 @client.command()
