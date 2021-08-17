@@ -98,6 +98,7 @@ def Timecheck():
 async def on_ready():
     print("Ready to kick names and take ass")
     DiscordComponents(client)
+    await client.change_presence(status=discord.Status.do_not_disturb)
     await client.change_presence(activity=discord.Game(
         "Hauling mad cash"))
     checktime.start()
