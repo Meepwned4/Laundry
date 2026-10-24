@@ -12,12 +12,11 @@ from discord_components import DiscordComponents, Button, ButtonStyle, Interacti
 
 intents = discord.Intents.default()
 intents.members = True
-
 client = commands.Bot(command_prefix=":", intents=intents)
 client.remove_command('help')
 
-# token = "NzMwNDk5NzIxMzYxMDk2ODA1.XwYY4Q.s-3ENo_pfF5r3tnkuTOXCojJlpI"
-token = 'NzM1MjU3Mzc3NjA3MjU0MTE3.Xxdnyw.yCKnVzcCHxY_vS5GMelz2ElqSXs'
+# token = ""
+token = ''
 
 global useractive
 global succvariable
